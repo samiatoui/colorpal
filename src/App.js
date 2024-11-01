@@ -25,7 +25,7 @@ function App() {
         });
 
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error('Network response was not good');
         }
 
         const result = await response.json();
