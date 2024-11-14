@@ -53,18 +53,16 @@ function App() {
         <h1>COLORPAL</h1>
       </header>
 
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className="colorcontainer">
         {error ? (
           <div>Error: {error}</div>
         ) : (
           palette && palette.map((color, index) => (
-            <div key={index} style={{
+            <div className='colorbox-cont' key={index} style={{
               width: '100%',
-              height: '500px',
             }}>
               <div className="colorbox" style={{
                 width: '100%',
-                height: '500px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -75,6 +73,7 @@ function App() {
                 <p style={{
                    color: 'white',
                    margin: 0,
+                   fontSize: '20px',
                 }}>{`[${color[0]}, ${color[1]}, ${color[2]}]`}</p>
               </div>
             </div>
@@ -88,10 +87,10 @@ function App() {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100px',
-        padding: '50px 25px',
+        marginTop: '10px',
       }}>
-        <a href="#" onClick={handleClick}>
-          Generate</a>
+        <button onClick={handleClick}>
+          Generate</button>
       </div>
     </div>
   );
