@@ -7,8 +7,6 @@ function App() {
   const [error, setError] = useState(null);
 
 
-
-
   const fetchPalette = async () => {
 
     const url = "/api/";  // Make sure you're using this relative path
@@ -49,7 +47,6 @@ function App() {
   }
 
 
-
   return (
     <div className="App">
       <header className="App-header">
@@ -58,15 +55,29 @@ function App() {
 
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         {error ? (
-          <div>Error: {error} </div>
+          <div>Error: {error}</div>
         ) : (
           palette && palette.map((color, index) => (
             <div key={index} style={{
               width: '100%',
               height: '500px',
-              backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})`,
-              margin: '0px',
-            }} />
+            }}>
+              <div className="colorbox" style={{
+                width: '100%',
+                height: '500px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                margin: '0 auto',
+                backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})`,
+              }}>
+                <p style={{
+                   color: 'white',
+                   margin: 0,
+                }}>{`[${color[0]}, ${color[1]}, ${color[2]}]`}</p>
+              </div>
+            </div>
           ))
         )}
       </div>
@@ -77,8 +88,10 @@ function App() {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100px',
+        padding: '50px 25px',
       }}>
-        <button onClick={handleClick}>Re-Generate</button>
+        <a href="#" onClick={handleClick}>
+          Generate</a>
       </div>
     </div>
   );
