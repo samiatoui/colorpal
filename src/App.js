@@ -120,7 +120,7 @@ function App() {
         }}
         onMouseEnter={onHover}
         onMouseLeave={onLeave}
-        onClick={() => onCopy(`[${color[0]}, ${color[1]}, ${color[2]}]`)}
+        onClick={() => onCopy(`(${color[0]}, ${color[1]}, ${color[2]})`)}
       >
         <p
           className="colorCode"
@@ -133,9 +133,10 @@ function App() {
           {isHovered && (
             <div className="hover-text">
               <p>Click to Copy</p>
+              {`(${color[0]}, ${color[1]}, ${color[2]})`}
+
             </div>
           )}
-          {`[${color[0]}, ${color[1]}, ${color[2]}]`}
         </p>
       </div>
     );
