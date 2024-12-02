@@ -10,7 +10,7 @@ function App() {
 
   const fetchPalette = async () => {
 
-    const url = "/api/";  // Make sure you're using this relative path
+    const url = "https://cors-anywhere.herokuapp.com/http://colormind.io/api/"; 
 
     const data = {
       model: "default",

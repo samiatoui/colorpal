@@ -2,7 +2,6 @@
   "name": "colorpal",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://colormind.io",
   "homepage": "http://samiatoui.github.io/colorpal",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
